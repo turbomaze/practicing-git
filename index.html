@@ -1,0 +1,22 @@
+<html>
+	<head>
+		<title>
+			Test Thing 2
+		</title>
+		
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" ></script>		
+		<script src="/socket.io/socket.io.js"></script>	
+		<script>
+		var server = io.connect("http://ec2-54-218-74-252.us-west-2.compute.amazonaws.com:8080");
+		var log = false;
+		$(function() { log = $("#log"); });
+
+		server.on('log', function(data) {
+			if (log) log.html(data + "<br />" + log.html());
+		});
+		</script>
+	</head>
+	<body style="background: #FFFFFF">	
+		<div id="log" style="color: #DCDCDC"></div>
+	</body>
+</html>
