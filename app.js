@@ -23,7 +23,7 @@ io.sockets.on('connection', function(client) {
 	console.log("A client has connected. There "+(numClients==1?"is":"are")+" "+numClients+" "+(numClients==1?"person":"people")+" online");
 });
 
-var msgs = ["All of your base are belong to us.", "It dont be like it is but it do.", "Go Brazil!"];
+var msgs = ["All of your base are belong to the NSA.", "It dont be like it is but it do.", "Go Brazil!"];
 var idx = 1;
 setInterval(function() {  
 	io.sockets.emit('log', msgs[idx]);
